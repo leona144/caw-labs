@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #f0f2f5;
+  padding: 20px;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.header-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.add-column-btn, .delete-all-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.add-column-btn {
+  background: #4a6cf7;
+  color: white;
+}
+
+.delete-all-btn {
+  background: #ff4757;
+  color: white;
+}
+
+.board {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.column {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 300px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.column-header h2 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.task-count {
+  background: #e9ecef;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.task-form {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.task-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #4a6cf7;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-btn, .close-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submit-btn {
+  background: #4a6cf7;
+  color: white;
+}
+
+.close-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.add-card-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  color: #666;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+
+.add-card-btn:hover {
+  border-color: #4a6cf7;
+  color: #4a6cf7;
+}
+
+.task-list {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100px;
+}
+
+.empty {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-style: italic;
+}
+
+.task-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.task-header h3 {
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.task-actions {
+  position: relative;
+}
+
+.task-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+  padding: 0 5px;
+}
+
+.task-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+  min-width: 150px;
+}
+
+.task-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.task-dropdown button:hover {
+  background: #f8f9fa;
+}
+
+.desc {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.task-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.label {
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.task-checklist {
+  margin: 10px 0;
+}
+
+.checklist-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.checklist-progress progress {
+  flex: 1;
+  height: 8px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.checklist-item input {
+  margin: 0;
+}
+
+.checklist-item span {
+  font-size: 14px;
+}
+
+.checklist-item .completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.due-date {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.add-column-placeholder {
+  border: 2px dashed #ddd;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-column-placeholder-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 20px;
+}
