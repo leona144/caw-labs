@@ -1,0 +1,155 @@
+/* SmoothScroll Component Styles */
+
+/* Vertical Section */
+.vertical-section {
+  height: 200vh;
+  width: 100vw;
+  padding: 50px 0;
+  background: #000;
+  color: #fff;
+}
+
+.vertical-section .container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.vertical__content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  gap: 2rem;
+}
+
+.vertical__content .col {
+  width: 50%;
+}
+
+.vertical__content .col_left {
+  height: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.vertical__content .col_right {
+  width: 40%;
+  padding-top: 6rem;
+}
+
+.vertical__heading {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 85%;
+  border-left: 3px solid #ff98a2;
+  padding: 25px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.vertical__heading span {
+  display: block;
+}
+
+.vertical__item:not(:last-child) {
+  margin-bottom: 240px;
+}
+
+.vertical__item h3 {
+  font-size: 20px;
+  color: #ff98a2;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.vertical__item p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Horizontal Section */
+.horizontal-section {
+  padding: 100px 0;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  color: #fff;
+}
+
+.horizontal-section .container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.horizontal__content {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+
+.horizontal__item {
+  border: 1px solid #efefef;
+  padding: 200px 150px;
+  flex-shrink: 0;
+  min-width: 300px;
+}
+
+.horizontal__num {
+  font-size: 80px;
+  font-weight: 900;
+  color: #ff98a2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .vertical__heading {
+    font-size: 48px;
+  }
+  
+  .vertical__content {
+    flex-direction: column;
+  }
+  
+  .vertical__content .col {
+    width: 100%;
+  }
+  
+  .vertical__content .col_right {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .horizontal__item {
+    padding: 150px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vertical__heading {
+    font-size: 36px;
+    padding: 20px;
+  }
+  
+  .vertical__item h3 {
+    font-size: 18px;
+  }
+  
+  .horizontal__item {
+    padding: 100px 50px;
+    min-width: 250px;
+  }
+  
+  .horizontal__content {
+    gap: 25px;
+  }
+  
+  .horizontal__num {
+    font-size: 60px;
+  }
+}

@@ -1,0 +1,700 @@
+.home{
+    height:100vh;
+    padding-top: 10px;
+    overflow: hidden;
+}
+.home_container{
+    text-align:center;
+    height: 100%;
+    position: relative;
+}
+.btns{
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+    justify-content: center;   
+}
+.home_container h4{
+    font-size: 1.5rem;
+}
+.home_container .me{
+    width:330px;
+    height:400px;
+    background: linear-gradient(var(--color-primary),transparent);
+    border-radius: 12rem 12rem 0 0;
+    margin:40px auto;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    overflow: hidden;
+}
+/*****/
+.special_h{
+      position: absolute;
+      bottom: 5px;
+     
+      textAlign:center; 
+      color: white;
+}
+/*****/
+/* scroll down */ 
+
+.scroll_down{
+    position: absolute;
+    right: -35px;
+    bottom: 80px;
+
+    font-weight: 300;
+}
+
+/* Header Socials */ 
+.home_socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+}
+
+.home_socials::after{
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+}
+.home_socials a{
+    font-size: 25px;
+}
+/* responsive */
+@media (max-width:1024px) {
+    header{
+        height: 68vh;
+
+    }
+}
+
+
+@media (max-width:600px) {
+    .home{
+        height: auto;
+        padding-top: 5rem;
+    }
+    .home_socials , .scroll_down{
+        display: none;
+    }
+    .home_container .me{
+  
+        max-width: 100%;
+        width: 300px;
+        height: 380px;
+    }
+    .home h1{
+        font-size: 2rem;
+    }
+}
+/***********text **/
+/* Hero Section Layout */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.me {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.me img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating shapes around image */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  opacity: 0.2;
+  filter: blur(20px);
+  z-index: 1;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  top: -20px;
+  left: -20px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -30px;
+  right: -30px;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  right: -40px;
+  animation: float 7s ease-in-out infinite 1s;
+}
+
+/* Attractive Phrase Section */
+.attractive-phrase {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.attractive-phrase.animate-phrase {
+  animation: slideInRight 0.8s ease 0.8s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px);
+  }
+}
+
+.phrase-wrapper {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.phrase-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #667eea, 
+    #764ba2, 
+    #f093fb);
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.phrase-text {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.phrase-main {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s ease 1s both;
+}
+
+.phrase-highlight {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+  animation: highlightPulse 2s ease infinite 1.2s;
+}
+
+@keyframes highlightPulse {
+  0%, 100% {
+    text-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+.phrase-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, 
+    rgba(102, 126, 234, 0.3),
+    rgba(118, 75, 162, 0.3));
+  border-radius: 4px;
+  z-index: -1;
+  animation: underlineExpand 1s ease 1.4s forwards;
+  transform-origin: left;
+}
+
+@keyframes underlineExpand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.phrase-sub {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #d1d5db;
+  margin-top: 5px;
+  animation: fadeInUp 0.8s ease 1.4s both;
+}
+
+/* Details Section */
+.phrase-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+.detail-item:nth-child(1) {
+  animation-delay: 1.6s;
+}
+
+.detail-item:nth-child(2) {
+  animation-delay: 1.8s;
+}
+
+.detail-item:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.detail-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Tagline */
+.phrase-tagline {
+  font-size: 1rem;
+  color: #9ca3af;
+  font-style: italic;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2.2s forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .attractive-phrase {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .phrase-main {
+    font-size: 2.5rem;
+  }
+  
+  .phrase-highlight {
+    font-size: 2rem;
+  }
+  
+  .phrase-sub {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .phrase-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .phrase-main {
+    font-size: 2rem;
+  }
+  
+  .phrase-highlight {
+    font-size: 1.6rem;
+  }
+  
+  .phrase-sub {
+    font-size: 1.4rem;
+  }
+  
+  .detail-text {
+    font-size: 1rem;
+  }
+  
+  .phrase-details {
+    gap: 15px;
+  }
+}
+
+/* Alternative Simple Version Styles */
+.attractive-phrase.simple {
+  padding: 30px;
+}
+
+.simple-phrase {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  text-align: center;
+}
+
+.simple-highlight {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.simple-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  animation: widthGrow 2s ease infinite;
+}
+
+@keyframes widthGrow {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+}
+/***/
+.lottie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* If you want the animation to be responsive */
+@media (max-width: 768px) {
+  .lottie-container {
+    max-width: 300px;
+    margin: 1rem auto;
+  }
+}
+/* ============================================
+   DARKVEIL LOADER STYLES
+   ============================================ */
+
+/* Fullscreen loader container */
+.darkveil-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Ensure DarkVeil canvas fills container */
+.darkveil-loader canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* Loader content overlay */
+.loader-content {
+  position: relative;
+  z-index: 10000;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.loader-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #4db5ff, #64ffda);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+.loader-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Loading dots animation */
+.loader-dots {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background: #4db5ff;
+  border-radius: 50%;
+  animation: dotPulse 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+  0%, 60%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  30% {
+    transform: scale(1.5);
+    opacity: 1;
+    background: #64ffda;
+  }
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+  }
+}
+
+/* ============================================
+   MAIN CONTENT TRANSITION
+   ============================================ */
+
+.home-main {
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure content animations start after loader disappears */
+.animate-text {
+  animation-delay: 0.3s !important;
+}
+
+.animate-buttons {
+  animation-delay: 0.5s !important;
+}
+
+.animate-phrase {
+  animation-delay: 0.7s !important;
+}
+
+.animate-scroll {
+  animation-delay: 0.9s !important;
+}
+
+/* Optional: Add a subtle fade-in to the whole container */
+.home_container {
+  animation: containerFadeIn 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes containerFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/******************/
+/* Add this to your home.css file */
+.attractive-phrase.smaller {
+  max-width: 600px; /* Reduce max width */
+  margin: 0 auto;
+}
+
+.phrase-wrapper.smaller {
+  padding: 25px; /* Reduce padding */
+}
+
+.smaller .phrase-main {
+  font-size: 2.2rem; /* Reduce font sizes */
+}
+
+.smaller .phrase-highlight {
+  font-size: 1.8rem;
+}
+
+.smaller .phrase-sub {
+  font-size: 1.6rem;
+}
+
+.smaller .phrase-details {
+  gap: 15px; /* Reduce gap between items */
+  margin: 20px 0;
+}
+
+.smaller .detail-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.smaller .detail-text {
+  font-size: 0.95rem;
+}
+
+.smaller .phrase-tagline {
+  font-size: 0.9rem;
+  padding: 10px;
+}
+/****/
+/* Ensure the hero section spreads items out */
+.hero-section {
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  gap: 40px; /* Space between animation and text */
+  margin-top: 50px;
+  width: 100%;
+}
+
+/* Container for the Lottie animation */
+.lottie-side {
+  flex: 1;
+  max-width: 500px; /* Adjust this to make the animation bigger/smaller */
+  display: flex;
+  justify-content: center;
+}
+
+/* Ensure the phrase doesn't shrink too much */
+.attractive-phrase.smaller {
+  flex: 1.2; 
+  max-width: 500px;
+}
+
+/* Responsive: Stack them on top of each other on small screens */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .lottie-side {
+    max-width: 300px;
+  }
+}
